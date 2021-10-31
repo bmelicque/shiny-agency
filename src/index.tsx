@@ -11,21 +11,23 @@ import Survey from "./pages/Survey";
 ReactDOM.render(
 	<React.StrictMode>
 		<Router>
-      <Header />
-			<Switch>
-				<Route exact path="/">
-					<Home />
-				</Route>
-				<Route exact path="/survey/:questionNumber">
-					<Survey />
-				</Route>
-        <Route exact path="/freelances">
-          <Freelances />
-        </Route>
-        <Route>
-          <Error />
-        </Route>
-			</Switch>
+			<div className={`max-w-screen-xl mx-auto font-display`}>
+				<Header />
+				<Switch>
+					<Route exact path="/">
+						<Home />
+					</Route>
+					<Route exact path="/survey/:questionNumber">
+						<Survey />
+					</Route>
+					<Route exact path="/freelances">
+						<Freelances />
+					</Route>
+					<Route>
+						<Error />
+					</Route>
+				</Switch>
+			</div>
 		</Router>
 	</React.StrictMode>,
 	document.getElementById("root")
