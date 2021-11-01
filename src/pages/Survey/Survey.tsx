@@ -7,6 +7,18 @@ type SurveyParams = {
 	questionNumber: string;
 };
 
+interface surveyData {
+    [index: number]: string
+}
+
+interface data {
+	surveyData: surveyData;
+}
+
+function isValidData(data: any): data is data {
+    return data?.surveyData !== undefined;
+}
+
 const linkStyle = `px-4 p-2 hover:underline`;
 const buttonStyle = `py-4 px-16 text-xl rounded-xl border-2 border-transparent hover:border-${colors.primary}`;
 
@@ -16,7 +28,7 @@ export function Survey() {
 	const nextQuestionNumber = questionNumber + 1;
 
 	const { data, isLoading, error } = useGet("http://localhost:8000/survey");
-	const questions = data.surveyData ? Object.values(data.surveyData) : [];
+	const questions = isValidData(data) ? data.surveyData : [];
 
 	if (error) return <p>Une erreur s'est produite</p>;
 

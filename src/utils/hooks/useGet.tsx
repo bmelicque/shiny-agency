@@ -1,12 +1,25 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-interface data {
-	surveyData?: object;
+interface freelanceProfile {
+	id: string;
+	job: string;
+	name: string;
+	picture: string;
 }
 
+interface freelanceData {
+    freelancersList: freelanceProfile[]
+}
+
+interface surveyData {
+	surveyData: object;
+}
+
+type data = freelanceData | surveyData;
+
 export function useGet(url: string) {
-	const [data, setData] = useState<data>({});
+	const [data, setData] = useState<data>();
 	const [isLoading, setIsLoading] = useState(true);
 	const [error, setError] = useState(false);
 
@@ -18,9 +31,9 @@ export function useGet(url: string) {
 		async function getData() {
 			try {
 				const fetchedData: data = (
-					await axios.get("http://localhost:8000/survey")
+					await axios.get(url)
 				).data;
-				setData(fetchedData);
+                setData(fetchedData);
 			} catch (error) {
 				console.log(error);
 				setError(true);
