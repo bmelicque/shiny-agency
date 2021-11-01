@@ -34,7 +34,7 @@ export function Survey() {
 
 	return (
 		<div className="flex flex-col items-center gap-12">
-			<h1 className={`text-xl font-bold`}>Question {questionNumber}</h1>
+			<h1 className={`text-xl font-bold border-b-2 border-${colors.primary}`}>Question {questionNumber}</h1>
 
 			{isLoading ? (
 				<i className="fas fa-spinner fa-spin text-3xl"></i>
