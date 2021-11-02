@@ -52,7 +52,7 @@ export function Survey() {
 				<Link to={`/survey/${prevQuestionNumber}`} className={linkStyle}>
 					Précédent
 				</Link>
-				{questionNumber >= 10 ? (
+				{questionNumber >= Object.keys(questions).length ? (
 					<Link to="/results" className={linkStyle}>
 						Résultats
 					</Link>
