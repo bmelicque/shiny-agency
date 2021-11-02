@@ -7,7 +7,9 @@ import Header from "./components/Header";
 import "./index.css";
 import Freelances from "./pages/Freelances";
 import Home from "./pages/Home";
+import Results from "./pages/Results";
 import Survey from "./pages/Survey";
+import { SurveyProvider } from "./utils/context";
 import { ThemeProvider } from "./utils/context";
 import GlobalStyle from "./utils/style/GlobalStyle";
 
@@ -15,24 +17,29 @@ ReactDOM.render(
 	<React.StrictMode>
 		<Router>
 			<ThemeProvider>
-				<GlobalStyle>
-					<Header />
-					<Switch>
-						<Route exact path="/">
-							<Home />
-						</Route>
-						<Route exact path="/survey/:questionNumber">
-							<Survey />
-						</Route>
-						<Route exact path="/freelances">
-							<Freelances />
-						</Route>
-						<Route>
-							<Error />
-						</Route>
-					</Switch>
-					<Footer />
-				</GlobalStyle>
+				<SurveyProvider>
+					<GlobalStyle>
+						<Header />
+						<Switch>
+							<Route exact path="/">
+								<Home />
+							</Route>
+							<Route exact path="/survey/:questionNumber">
+								<Survey />
+							</Route>
+							<Route exact path="/results">
+								<Results />
+							</Route>
+							<Route exact path="/freelances">
+								<Freelances />
+							</Route>
+							<Route>
+								<Error />
+							</Route>
+						</Switch>
+						<Footer />
+					</GlobalStyle>
+				</SurveyProvider>
 			</ThemeProvider>
 		</Router>
 	</React.StrictMode>,

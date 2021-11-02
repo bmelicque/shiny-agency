@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { ThemeContext } from "../context/index";
+import { ThemeContext } from "../context";
 import colors from "./colors";
 
 const style = {

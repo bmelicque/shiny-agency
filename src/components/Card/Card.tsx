@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import DefaultPicture from "../../assets/profile.png";
 import colors from "../../utils/style/colors";
-import { ThemeContext } from "../../utils/context/index";
+import { ThemeContext } from "../../utils/context";
 
 interface CardProps {
 	label: string;

@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { ReactComponent as HomeIllustration } from "../../assets/home-illustration.svg";
 import colors from "../../utils/style/colors";
-import { ThemeContext } from "../../utils/context/index";
+import { ThemeContext } from "../../utils/context";
 
 const style = {
 	main: (isDark: boolean) =>

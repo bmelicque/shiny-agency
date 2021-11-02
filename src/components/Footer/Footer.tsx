@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import colors from "../../utils/style/colors";
-import { ThemeContext } from "../../utils/context/index";
+import { ThemeContext } from "../../utils/context";
 
 const style = {
 	footer: `flex items-center justify-center py-16`,

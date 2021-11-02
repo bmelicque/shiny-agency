@@ -3,7 +3,7 @@ import colors from "../../utils/style/colors";
 import darkLogo from "../../assets/dark-logo.png";
 import lightLogo from "../../assets/light-logo.png";
 import { useContext } from "react";
-import { ThemeContext } from "../../utils/context/index";
+import { ThemeContext } from "../../utils/context";
 
 const style = {
 	header: `flex flex-row justify-between py-8`,

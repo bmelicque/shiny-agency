@@ -2,7 +2,7 @@ import Card from "../../components/Card";
 import colors from "../../utils/style/colors";
 import { useGet } from "../../utils/hooks/useGet";
 import { useContext } from "react";
-import { ThemeContext } from "../../utils/context/index";
+import { ThemeContext } from "../../utils/context";
 
 interface freelanceProfile {
 	id: string;
