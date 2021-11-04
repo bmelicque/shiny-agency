@@ -11,7 +11,7 @@ interface freelanceProfile {
 	picture: string;
 }
 
-interface freelanceData {
+export interface freelanceData {
 	freelancersList: freelanceProfile[];
 }
 

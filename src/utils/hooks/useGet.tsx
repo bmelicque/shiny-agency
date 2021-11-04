@@ -1,22 +1,10 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { freelanceData } from '../../pages/Freelances/Freelances';
+import { surveyData } from '../../pages/Survey/Survey';
+import { resultsData } from '../../pages/Results/Results';
 
-interface freelanceProfile {
-	id: string;
-	job: string;
-	name: string;
-	picture: string;
-}
-
-interface freelanceData {
-    freelancersList: freelanceProfile[]
-}
-
-interface surveyData {
-	surveyData: object;
-}
-
-type data = freelanceData | surveyData;
+type data = freelanceData | surveyData | resultsData;
 
 export function useGet(url: string) {
 	const [data, setData] = useState<data>();

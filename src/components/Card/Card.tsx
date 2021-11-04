@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import DefaultPicture from "../../assets/profile.png";
 import colors from "../../utils/style/colors";
 import { ThemeContext } from "../../utils/context";
+import { useState } from "react";
 
 interface CardProps {
 	label: string;
@@ -26,12 +27,19 @@ const style = {
 export function Card({ label, title, picture = DefaultPicture }: CardProps) {
 	const { theme } = useContext(ThemeContext);
 	const isDark = theme === "dark";
+	const [isFavorite, setIsFavorite] = useState(false);
+	const star = isFavorite ? "⭐️" : "";
 
 	return (
-		<div className={style.card(isDark)}>
-			<span className={style.label(isDark)}>{label}</span>
+		<div
+			className={style.card(isDark)}
+			onClick={() => setIsFavorite(!isFavorite)}
+		>
+			<h2 className={style.label(isDark)}>
+				{label} {star}
+			</h2>
 			<img src={picture} alt="freelance" className={style.image} />
-			<span>{title}</span>
+			<p>{title}</p>
 		</div>
 	);
 }

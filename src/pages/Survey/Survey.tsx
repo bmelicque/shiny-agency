@@ -9,15 +9,15 @@ type SurveyParams = {
 	questionNumber: string;
 };
 
-interface surveyData {
+interface surveyDataInterface {
 	[index: number]: string;
 }
 
-interface data {
-	surveyData: surveyData;
+export interface surveyData {
+	surveyData: surveyDataInterface;
 }
 
-function isValidData(data: any): data is data {
+function isValidData(data: any): data is surveyData {
 	return data?.surveyData !== undefined;
 }
 
