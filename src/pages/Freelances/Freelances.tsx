@@ -40,7 +40,7 @@ export function Freelances() {
 			</p>
 			<div className={style.cardWrapper}>
 				{isLoading ? (
-					<i className="fas fa-spinner fa-spin text-3xl"></i>
+					<i className="fas fa-spinner fa-spin text-3xl" data-testid="loader"></i>
 				) : error ? (
 					<p>Une erreur est survenue</p>
 				) : (
