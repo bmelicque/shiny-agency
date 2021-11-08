@@ -1,7 +1,1 @@
-import { useGet } from "./useGet";
-
-const Hooks = {
-    useGet
-}
-
-export default Hooks;
+export { useGet } from "./useGet";

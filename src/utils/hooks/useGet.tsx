@@ -1,27 +1,26 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { freelanceData } from '../../pages/Freelances/Freelances';
-import { surveyData } from '../../pages/Survey/Survey';
-import { resultsData } from '../../pages/Results/Results';
+import { freelanceData } from "../../pages/Freelances/Freelances";
+import { surveyData } from "../../pages/Survey/Survey";
+import { resultsData } from "../../pages/Results/Results";
+import { profileData } from "../../pages/Profile/Profile";
 
-type data = freelanceData | surveyData | resultsData;
+type data = freelanceData | profileData | surveyData | resultsData;
 
 export function useGet(url: string) {
 	const [data, setData] = useState<data>();
 	const [isLoading, setIsLoading] = useState(true);
 	const [error, setError] = useState(false);
-
+	
 	useEffect(() => {
 		if (!url) return;
 
-        setIsLoading(true);
+		setIsLoading(true);
 
 		async function getData() {
 			try {
-				const fetchedData: data = (
-					await axios.get(url)
-				).data;
-                setData(fetchedData);
+				const fetchedData: data = (await axios.get(url)).data;
+				setData(fetchedData);
 			} catch (error) {
 				console.log(error);
 				setError(true);

@@ -4,11 +4,15 @@ import { useGet } from "../../utils/hooks/useGet";
 import { useContext } from "react";
 import { ThemeContext } from "../../utils/context";
 
-interface freelanceProfile {
+export interface freelanceProfile {
 	id: string;
-	job: string;
 	name: string;
+	job: string;
 	picture: string;
+	skills: string[];
+	location: string;
+	available: boolean;
+	tjm: number;
 }
 
 export interface freelanceData {
@@ -47,6 +51,7 @@ export function Freelances() {
 					freelancersList.map((profile: freelanceProfile, index: number) => (
 						<Card
 							key={`${profile.name}-${index}`}
+							freelanceId={profile.id}
 							label={profile.job}
 							picture={profile.picture}
 							title={profile.name}

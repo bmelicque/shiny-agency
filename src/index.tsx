@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import "./index.css";
 import Freelances from "./pages/Freelances";
 import Home from "./pages/Home";
+import Profile from "./pages/Profile";
 import Results from "./pages/Results";
 import Survey from "./pages/Survey";
 import { SurveyProvider } from "./utils/context";
@@ -32,6 +33,9 @@ ReactDOM.render(
 							</Route>
 							<Route exact path="/freelances">
 								<Freelances />
+							</Route>
+							<Route exact path="/profile/:id">
+								<Profile />
 							</Route>
 							<Route>
 								<Error />

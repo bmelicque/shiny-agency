@@ -7,7 +7,7 @@ const style = {
 		`min-h-screen w-screen ${
 			isDark ? `bg-${colors.backgroundDark} text-white` : "bg-white text-black"
 		}`,
-	container: `max-w-screen-xl mx-auto font-display`,
+	container: `max-w-screen-xl mx-auto font-serif font-bold`,
 };
 
 function GlobalStyle({ children }: { children: React.ReactNode }) {

@@ -5,6 +5,7 @@ import {
 	waitForElementToBeRemoved,
 	screen,
 } from "@testing-library/react";
+import { BrowserRouter as Router } from "react-router-dom";
 
 import Freelances from ".";
 import { ThemeProvider } from "../../utils/context";
@@ -32,9 +33,17 @@ beforeAll(() => server.listen());
 afterEach(() => server.resetHandlers());
 afterAll(() => server.close());
 
+function wrappers({children}: React.PropsWithChildren<{}>) {
+	return (
+		<Router>
+			<ThemeProvider>{children}</ThemeProvider>
+		</Router>
+	);
+};
+
 describe("Freelances", () => {
 	it("should render without crashing", async () => {
-		render(<Freelances />, { wrapper: ThemeProvider });
+		render(<Freelances />, { wrapper: wrappers });
 		expect(screen.getByTestId("loader")).toBeTruthy();
 		await waitForElementToBeRemoved(() => screen.getByTestId("loader"));
 		expect(screen.getByText("John Doe")).toBeTruthy();

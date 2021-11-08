@@ -10,7 +10,7 @@ const style = {
 			isDark ? `bg-${colors.backgroundLessDark}` : `bg-${colors.backgroundLight}`
 		} p-16 flex flex-row items-center`,
 	textWrapper: `w-1/2 flex flex-col items-center gap-4`,
-	title: `text-5xl font-bold leading-loose`,
+	title: `text-5xl font-bold leading-relaxed xl:leading-loose`,
 	link: (isDark: boolean) =>
 		`rounded-full px-4 py-1 flex items-center ${
 			isDark ? "text-white" : `text-${colors.secondary}`

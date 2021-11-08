@@ -76,10 +76,14 @@ export function Results() {
 				{resultsData &&
 					resultsData.map(({ title, description }) => (
 						<>
-							<h2 key={`title-${title}`} className={style.jobTitle}>
+							<h2 key={`title-description-${title}`} className={style.jobTitle}>
 								{title.toUpperCase()}
 							</h2>
-							<p className={style.jobDescription} data-testid="job-description">
+							<p
+								key={`description-${title}`}
+								className={style.jobDescription}
+								data-testid="job-description"
+							>
 								{description}
 							</p>
 						</>
