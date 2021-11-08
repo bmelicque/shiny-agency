@@ -1,11 +1,10 @@
 import { useContext } from "react";
 import { ThemeContext } from "../context";
-import colors from "./colors";
 
 const style = {
 	body: (isDark = false) =>
-		`min-h-screen w-screen ${
-			isDark ? `bg-${colors.backgroundDark} text-white` : "bg-white text-black"
+		`min-h-screen w-screen overflow-x-hidden ${
+			isDark ? `bg-darkest text-white` : "bg-white text-black"
 		}`,
 	container: `max-w-screen-xl mx-auto font-serif font-bold`,
 };

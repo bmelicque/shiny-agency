@@ -1,20 +1,19 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { ReactComponent as HomeIllustration } from "../../assets/home-illustration.svg";
-import colors from "../../utils/style/colors";
 import { ThemeContext } from "../../utils/context";
 
 const style = {
 	main: (isDark: boolean) =>
 		`my-16 ${
-			isDark ? `bg-${colors.backgroundLessDark}` : `bg-${colors.backgroundLight}`
+			isDark ? "bg-dark" : "bg-lightblue"
 		} p-16 flex flex-row items-center`,
 	textWrapper: `w-1/2 flex flex-col items-center gap-4`,
 	title: `text-5xl font-bold leading-relaxed xl:leading-loose`,
 	link: (isDark: boolean) =>
 		`rounded-full px-4 py-1 flex items-center ${
-			isDark ? "text-white" : `text-${colors.secondary}`
-		} text-xl hover:bg-${colors.primary} hover:text-white`,
+			isDark ? "text-white" : "text-grey"
+		} text-xl hover:bg-primary hover:text-white`,
 	image: `w-1/2`,
 };
 

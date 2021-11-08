@@ -1,11 +1,10 @@
 import { useContext } from "react";
-import colors from "../../utils/style/colors";
 import { ThemeContext } from "../../utils/context";
 
 const style = {
 	footer: `flex items-center justify-center py-16`,
 	button: (isDark: boolean) =>
-		`bg-transparent ${isDark ? "text-white" : `text-${colors.secondary}`}`,
+		`bg-transparent ${isDark ? "text-white" : "text-grey"}`,
 };
 
 export function Footer() {

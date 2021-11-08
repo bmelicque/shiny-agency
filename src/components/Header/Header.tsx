@@ -1,5 +1,4 @@
 import { NavLink } from "react-router-dom";
-import colors from "../../utils/style/colors";
 import darkLogo from "../../assets/dark-logo.png";
 import lightLogo from "../../assets/light-logo.png";
 import { useContext } from "react";
@@ -11,8 +10,8 @@ const style = {
 	nav: `flex items-center`,
 	navLink: (isDark = false) =>
 		`rounded-full px-4 py-1 flex items-center ${
-			isDark ? "text-white" : `text-${colors.secondary}`
-		} text-xl hover:bg-${colors.primary} hover:text-white`,
+			isDark ? "text-white" : "text-grey"
+		} text-xl hover:bg-primary hover:text-white`,
 };
 
 export function Header() {
