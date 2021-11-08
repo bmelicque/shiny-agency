@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "../../components/Card";
+import Loader from "../../components/Loader";
 import { freelanceProfile } from "./Freelances";
 
 interface Props {
@@ -24,14 +25,11 @@ const FreelancesVue = (props: Props) => {
 			<p className={style.p(isDark)}>
 				Chez Shiny nous réunissons les meilleurs profils pour vous
 			</p>
-			<div className={style.cardWrapper}>
-				{isLoading ? (
-					<i
-						className="fas fa-spinner fa-spin text-3xl"
-						data-testid="loader"
-					></i>
-				) : (
-					data.map((profile, index: number) => (
+			{isLoading ? (
+				<Loader />
+			) : (
+				<div className={style.cardWrapper}>
+					{data.map((profile, index: number) => (
 						<Card
 							key={`${profile.name}-${index}`}
 							freelanceId={profile.id}
@@ -39,9 +37,9 @@ const FreelancesVue = (props: Props) => {
 							picture={profile.picture}
 							title={profile.name}
 						/>
-					))
-				)}
-			</div>
+					))}
+				</div>
+			)}
 		</main>
 	);
 };

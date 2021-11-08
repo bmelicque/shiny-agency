@@ -4,6 +4,7 @@ import { freelanceProfile } from "../Freelances/Freelances";
 import { useContext } from "react";
 import { ThemeContext } from "../../utils/context/ThemeContext";
 import ProfileVue from "./Profile.vue";
+import Loader from "../../components/Loader";
 
 export interface profileData {
 	freelanceData: freelanceProfile;
@@ -19,7 +20,7 @@ export function Profile() {
 	);
 
 	if (error) return <p>Il semblerait qu'il y ait un problème...</p>;
-	if (isLoading) return <i className="fas fa-spinner fa-spin text-3xl"></i>;
+	if (isLoading) return <Loader />;
 
 	const profileData = data!.freelanceData;
 

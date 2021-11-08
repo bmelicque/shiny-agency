@@ -4,6 +4,7 @@ import { useGet } from "../../utils/hooks/useGet";
 import { useContext } from "react";
 import { SurveyContext } from "../../utils/context";
 import { ThemeContext } from "../../utils/context/ThemeContext";
+import Loader from "../../components/Loader";
 
 type SurveyParams = {
 	questionNumber: string;
@@ -40,7 +41,7 @@ export function Survey() {
 
 	if (error) return <p>Une erreur s'est produite</p>;
 
-	if (isLoading) return <i className="fas fa-spinner fa-spin text-3xl"></i>;
+	if (isLoading) return <Loader />;
 
 	const questions = data!.surveyData;
 

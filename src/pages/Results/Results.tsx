@@ -5,6 +5,7 @@ import {
 	answersInterface,
 } from "../../utils/context/SurveyContext";
 import ResultsVue from "./Results.vue";
+import Loader from "../../components/Loader";
 
 /* Defining and controlling interfaces */
 interface resultsData {
@@ -31,7 +32,7 @@ export function Results() {
 	);
 
 	if (error) return <span>Il y a un problème...</span>;
-	if (isLoading) return <p data-testid="loader">Chargement...</p>
+	if (isLoading) return <Loader />
 
 	const resultsData = data!.resultsData;
 
